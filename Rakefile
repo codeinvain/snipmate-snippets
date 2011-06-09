@@ -22,3 +22,9 @@ task :deploy_local => ["snippets_dir:purge"] do
   end
   cp "support_functions.vim", @snippets_dir, :verbose => true
 end
+
+desc "install taks (for janus)"
+task :install do
+  Rake::Task["deploy_local"].invoke
+end
+
